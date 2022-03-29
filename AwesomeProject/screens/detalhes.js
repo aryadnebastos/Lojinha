@@ -25,8 +25,7 @@ const styles = StyleSheet.create({
     detalhesImg:{
         alignItems: 'center',
         justifyContent: 'center',
-        paddingVertical: '2%'
-        
+        paddingVertical: '2%',
     },
     detalhesText: {
         flex: 1,
