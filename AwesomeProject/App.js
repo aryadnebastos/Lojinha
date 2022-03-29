@@ -1,36 +1,37 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- *
- * @format
- * @flow strict-local
- */
+import 'react-native-gesture-handler';
 
 import React, { useEffect, useState } from 'react';
 //import * as React from 'react';
-import { View, KeyboardAvoidingView, Image, TextInput, TouchableOpacity, Text, StyleSheet, Animated, Keyboard } from 'react-native';
-import { NavigationContainer } from '@react-navigation/native';
-import 'react-native-gesture-handler';
-import { createStackNavigator } from '@react-navigation/stack';
-import Login from './screens/login';
-import Principal from './screens/principal';
+import { View, KeyboardAvoidingView, Image, TextInput, TouchableOpacity, Text, StyleSheet, Animated, Keyboard, StatusBar } from 'react-native';
 
+import Routes from './assets/router';
 
-const Stack = createStackNavigator();
-
-function MyStack() {
-  return (
-    <Stack.Navigator>
-      <Stack.Screen name="Login" component={Login} />
-      <Stack.Screen name="Principal" component={Principal} />
-    </Stack.Navigator>
-  );
-}
 
 export default function App() {
   return (
-    <NavigationContainer>
-      <MyStack />
-    </NavigationContainer>
-  );
-}
+    <> 
+      <StatusBar style="light" backgroundColor="#000"translucent={true} />
+      <Routes/>
+    </>
+  )
+
+
+};
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: '#fff',
+    alignItems: 'center',
+    justifyContent: 'center',
+    width: '90%',
+    padding: 20,
+  },
+  background: {
+    flex: 1,
+    alignItems: 'center',
+    justifyContent: 'center',
+
+  }
+});
+

@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:Fonts">
+   </FileRef>
+   <FileRef
       location = "group:AwesomeProject.xcodeproj">
    </FileRef>
    <FileRef
