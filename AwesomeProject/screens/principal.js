@@ -37,18 +37,15 @@ export default function Principal() {
             </View>
             <View style={styles.line} />
             <View style={styles.textContainer}>
-                <Text style={styles.text}>GAMES</Text>
-                <Text style={[styles.text, {color: '#878787'}]}> - VIRTUAL REALITY</Text>
+                <Text style={styles.text}>LANÇAMENTOS</Text>
+                <Text style={[styles.text, {color: '#878787'}]}> - 2022</Text>
 
             </View>
 
             <View style={styles.line} />
 
             <ScrollView>
-               
-            <View style={styles.textContainer}>
-                <Text style={styles.text}>LANÇAMENTOS</Text>
-            </View>
+
                 
             {/* <View style={styles.grid}>
                 { produtos.map(produto => 

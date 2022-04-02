@@ -29,13 +29,13 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         justifyContent: 'center',
         paddingVertical: '2%',
-        width: 200,
+        width: 150,
         height:100,
     },
     ordena:{
         flex: 2,
         width: '50%',
-
+        margin: 10,
     },
     detalhesText: {
         flex: 1,
