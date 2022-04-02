@@ -1,6 +1,6 @@
 import 'react-native-gesture-handler';
 import React, { useEffect, useState } from 'react';
-import { View, Text, StyleSheet, Image, StatusBar } from 'react-native';
+import { View, Text, StyleSheet, Image, FlatList, StatusBar } from 'react-native';
 import { ScrollView, TouchableOpacity } from 'react-native-gesture-handler';
 
 import Detalhes from '../screens/detalhes';
@@ -9,6 +9,22 @@ import Icon from 'react-native-vector-icons';
 
  
 export default function Principal() {
+
+    const [produtos, setProdutos] = useState([]);
+
+    useEffect(() => {
+        fetch("https://fakestoreapi.com/products")
+            .then(res=>res.json())
+            .then(json=>setProdutos(json));
+
+    }, []);
+
+    useEffect(() => {
+        console.log(produtos)
+    }, [produtos]);
+
+    
+
     return (
         <View>
             <View style={styles.container}>
@@ -34,10 +50,24 @@ export default function Principal() {
                 <Text style={styles.text}>LANÇAMENTOS</Text>
             </View>
                 
-            <View style={{ flexDirection: 'row', justifyContent: 'space-around' }}>
-                <Detalhes/>
-                <Detalhes/>        
-            </View>
+            {/* <View style={styles.grid}>
+                { produtos.map(produto => 
+                    <Detalhes titulo={'GAMES'} descricao={'Pequeno Resumo'} />
+                ) }
+                
+                
+                     
+            </View> */}
+                <FlatList
+                    columnWrapperStyle={{ justifyContent: 'space-between' }}
+                    data={produtos}
+                    numColumns={2}
+                    renderItem={({ item }) => {
+                        return (
+                            <Detalhes titulo={item.title} descricao={`$$ ${item.price}`} imagem={item.image} />
+                        );
+                    }}
+                />
 
 
             </ScrollView>
@@ -74,6 +104,12 @@ const styles = StyleSheet.create({
     line:{
         borderBottomColor: '#878787',
         borderBottomWidth: 3
-    }
+    },
+    grid: {
+        flex: 1,
+        flexGrow: 1,
+        flexDirection: 'row',
+        alignItems: 'flex-start' // if you want to fill rows left to right
+      },
 });
 
