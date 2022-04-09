@@ -5,6 +5,7 @@ import { createStackNavigator } from "@react-navigation/stack";
 import Login from '../screens/login'
 import Principal from '../screens/principal'
 import Detalhes from '../screens/detalhes'
+import Produto from "../screens/produto";
 
 const Stack = createStackNavigator();
 
@@ -22,8 +23,8 @@ function Routes(){
                     options={{headerShown: false}}
                 />
                 <Stack.Screen
-                    name="Detalhes"
-                    component={Detalhes}
+                    name="Produto"
+                    component={Produto}
                 />
             </Stack.Navigator>
         </NavigationContainer>

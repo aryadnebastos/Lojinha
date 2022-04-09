@@ -19,6 +19,7 @@ export default function Principal() {
 
     }, []);
 
+
     useEffect(() => {
         console.log(produtos)
     }, [produtos]);
@@ -39,11 +40,8 @@ export default function Principal() {
             <View style={styles.textContainer}>
                 <Text style={styles.text}>LANÇAMENTOS</Text>
                 <Text style={[styles.text, {color: '#878787'}]}> - 2022</Text>
-
             </View>
-
             <View style={styles.line} />
-
             <ScrollView>
 
                 
