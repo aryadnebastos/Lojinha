@@ -23,8 +23,8 @@ function Routes(){
                     options={{headerShown: false}}
                 />
                 <Stack.Screen
-                    name="Produto"
-                    component={Produto}
+                    name="Detalhes"
+                    component={Detalhes}
                 />
             </Stack.Navigator>
         </NavigationContainer>

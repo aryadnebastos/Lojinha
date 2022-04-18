@@ -5,11 +5,11 @@ import { useNavigation } from '@react-navigation/native';
 
 
  
-export default function Detalhes({ titulo , descricao, imagem }) {
+export default function Produto({ item, titulo , descricao, imagem }) {
     const navigation = useNavigation();
 
     const acessar = () => {
-        navigation.navigate("Produto")
+        navigation.navigate("Detalhes", { titulo, descricao, imagem }, );
     };
 
 

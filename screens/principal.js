@@ -3,7 +3,8 @@ import React, { useEffect, useState } from 'react';
 import { View, Text, StyleSheet, Image, FlatList, StatusBar } from 'react-native';
 import { ScrollView, TouchableOpacity } from 'react-native-gesture-handler';
 
-import Detalhes from '../screens/detalhes';
+import Produto from './produto';
+import Detalhes from './detalhes';
 
 import Icon from 'react-native-vector-icons';
 
@@ -59,7 +60,7 @@ export default function Principal() {
                     numColumns={2}
                     renderItem={({ item }) => {
                         return (
-                            <Detalhes titulo={item.title} descricao={`$$ ${item.price}`} imagem={item.image} />
+                            <Produto item={item} titulo={item.title} descricao={`$$ ${item.price}`} imagem={item.image} />
                         );
                     }}
                 />
