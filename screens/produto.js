@@ -25,7 +25,7 @@ export default function Produto({ item, titulo , descricao, imagem }) {
                 />
             </View>
             <View> 
-                <Text style={styles.detalhesText}>{titulo}</Text>
+                <Text numberOfLines={2} style={styles.detalhesText}>{titulo}</Text>
             </View>
             <View style={styles.line}/>
             <Text style={styles.subtexto}>{descricao}</Text>
@@ -53,7 +53,6 @@ const styles = StyleSheet.create({
         padding: 10,
     },
     detalhesText: {
-        height: 120,
         paddingVertical: '2%',
         alignItems: 'center',
         textAlign: 'center',

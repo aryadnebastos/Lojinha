@@ -1,11 +1,26 @@
 import 'react-native-gesture-handler';
 import React from 'react';
-import { View, Text, Image, StyleSheet, TouchableOpacity} from 'react-native';
+import { View, Text, Image, StyleSheet, TouchableOpacity, Alert} from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import { ScrollView } from 'react-native-gesture-handler';
 
 export default function Detalhes({route}) {
     const { titulo, descricao, imagem } = route.params;
+
+    const comprar = () => {
+        Alert.alert(
+          "Adicionar ao Carrinho",
+          "Deseja adicionar o item ao seu carrinho? ",
+          [
+            {
+              text: "Voltar",
+              onPress: () => console.log("Cancel Pressed"),
+              style: "cancel"
+            },
+            { text: "OK", onPress: () => console.log("OK Pressed") }
+          ]
+        ); 
+    };
 
     return (
 
@@ -18,13 +33,24 @@ export default function Detalhes({route}) {
                     style={styles.detalhesImg}
                     resizeMode='contain'
                 />
-                <Text>
+            </View>
+            <View style={styles.containerText}>
+                <Text style={styles.detalhesText}>
                     {titulo}
                 </Text>
-                <Text>
+                <View style={styles.line}/>
+                <Text style={styles.subtexto}>
                     {descricao}
                 </Text>
             </View>
+
+            <View>
+                <TouchableOpacity onPress={() => comprar()} style={styles.btnShop}>
+                    <Text style={styles.shopText}>COMPRAR</Text>
+                </TouchableOpacity>
+            </View>
+
+           
            
         </ScrollView>
           
@@ -60,21 +86,42 @@ const styles = StyleSheet.create({
         borderColor: '#FF0000',
         borderWidth: 0
     },
+    containerText:{
+        backgroundColor: '#FFFFFF',
+        width: '100%',
+        alignSelf: 'center',
+        alignContent: 'center',
+        padding: '1%',
+        borderColor: '#FF0000',
+        borderWidth: 0
+    },
     detalhesText: {
-        height: 120,
-        paddingVertical: '2%',
-        alignItems: 'center',
+        minHeight: 60,
+        paddingVertical: '5%',
         textAlign: 'center',
-        justifyContent: 'center',
-        fontSize: 16
+        fontStyle: 'italic',
+        fontSize: 20,
+        borderColor: '#0000FF',
+        borderWidth: 0
     },
     subtexto: {
-        paddingTop: 5,
-        height: 20,
         alignItems: 'center',
         textAlign: 'center',
         justifyContent: 'center',
-        fontSize: 14
+        fontSize: 14,
+        padding: '5%',
+    },
+    shopText: {
+        color: '#FFF',
+        fontSize: 18
+    },
+    btnShop: {
+        backgroundColor: '#FA8072',
+        width: '100%',
+        height: 45,
+        alignItems: 'center',
+        justifyContent: 'center',
+        borderRadius: 7
     },
     line:{
         borderBottomColor: '#878787',
