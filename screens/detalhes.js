@@ -16,6 +16,7 @@ export default function Detalhes({route}) {
                         uri: imagem
                     }}
                     style={styles.detalhesImg}
+                    resizeMode='contain'
                 />
                 <Text>
                     {titulo}
@@ -37,21 +38,27 @@ const styles = StyleSheet.create({
     ordena:{
         backgroundColor: '#FFFFFF',
         flex: 1,
-        margin: 10,
         padding: '5%',
     },
     container:{
         backgroundColor: '#FFFFFF',
         flex: 1,
-        margin: 10,
-        padding: '5%',
+        width: '100%',
+        height: 500,
+        alignSelf: 'center',
+        alignContent: 'center',
+        padding: '2%',
+        borderColor: '#0000FF',
+        borderWidth: 0
     },
     detalhesImg:{
-        flex: 1, 
+        flex: 1,
         alignItems: 'center',
         display: 'flex',
         justifyContent: 'center',
         paddingVertical: '2%',
+        borderColor: '#FF0000',
+        borderWidth: 0
     },
     detalhesText: {
         height: 120,
