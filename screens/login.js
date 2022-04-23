@@ -68,7 +68,8 @@ export default function Login({ navigation }) {
                         width: logo.x,
                         height: logo.y,
                     }}
-                    source={require('../src/assets/logo.png')}
+                    source={require('../src/assets/lojinha.png')}
+                    resizeMode='contain'
                 />
             </View>
 
@@ -117,7 +118,7 @@ const styles = StyleSheet.create({
         flex: 1,
         alignItems: 'center',
         justifyContent: 'center',
-        backgroundColor: '#191919'
+        backgroundColor: '#D3D3D3'
     },
     containerLogo: {
         flex: 1,
@@ -156,7 +157,7 @@ const styles = StyleSheet.create({
         paddingBottom: 10
     },
     registerText: {
-        color: '#FFF',
+        color: '#1C1C1C',
         padding: 20
     }
 

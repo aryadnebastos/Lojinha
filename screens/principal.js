@@ -29,24 +29,27 @@ export default function Principal() {
 
     return (
         <View>
+           
             <View style={styles.container}>
                 <View style={styles.header}>
                     <Image
-                        source={require('../src/assets/logo.png')}
+                        source={require('../src/assets/lojinha.png')}
                         style={styles.image}
+                        resizeMode='contain'
                     />
                 </View>
             </View>
             <View style={styles.line} />
-            <View style={styles.textContainer}>
-                <Text style={styles.text}>LANÇAMENTOS</Text>
-                <Text style={[styles.text, {color: '#878787'}]}> - 2022</Text>
-            </View>
-            <View style={styles.line} />
             <ScrollView>
+                <View style={styles.textContainer}>
+                    <Text style={styles.text}>LANÇAMENTOS</Text>
+                    <Text style={[styles.text, {color: '#878787'}]}> - 2022</Text>
+                </View>
+                <View style={styles.line} />
+            
 
                 
-            {/* <View style={styles.grid}>
+                {/* <View style={styles.grid}>
                 { produtos.map(produto => 
                     <Detalhes titulo={'GAMES'} descricao={'Pequeno Resumo'} />
                 ) }
@@ -81,8 +84,7 @@ const styles = StyleSheet.create({
         paddingTop: 40
     },
     container: {
-        backgroundColor: '#191919',
-        width: '100%'
+        width: '90%',
     },
     image: {
         width: '100%',
